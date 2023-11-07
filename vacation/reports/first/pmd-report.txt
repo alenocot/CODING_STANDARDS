@@ -1,0 +1,1 @@
+src/main/java/programa/VacationPackage.java:12:	ImmutableField:	ImmutableField: Field 'destination' may be declared final

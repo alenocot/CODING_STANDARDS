@@ -34,7 +34,7 @@ public final class Constantes {
     /**
      * Penalización por duración de vacación corta.
      */
-    public static final int PENALIZACION_DURACION_CORTA = 200;
+    public static final int PENAL_DURA_CORTA = 200;
 
     /**
      * Tamaño máximo del grupo de viajeros.
@@ -49,7 +49,7 @@ public final class Constantes {
     /**
      * Tamaño máximo del grupo de viajeros considerado demasiado grande.
      */
-    public static final int DEMASIADOS_VIAJEROS = 80;
+    public static final int DEM_VIAJEROS = 80;
 
     /**
      * Número mínimo de días para que una vacación no se considere corta.
@@ -66,4 +66,19 @@ public final class Constantes {
      * Costo base.
      */
     public static final int COSTO_BASE = 1000;
+    /**
+     * Costo adicional para el paquete Todo Incluido por viajero.
+     */
+    public static final int COSTO_TODO_INCLUIDO = 200;
+
+    /**
+     * Costo adicional para el paquete de Actividades de Aventura por viajero.
+     */
+    public static final int COSTO_ACTIVIDADES_AVENTURA = 150;
+
+    /**
+     * Costo adicional para el paquete de Spa y Bienestar por viajero.
+     */
+    public static final int COSTO_SPA_Y_BIENESTAR = 100;
+
 }

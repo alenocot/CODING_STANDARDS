@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.21.0" timestamp="2023-11-07T05:11:16.882">
+<file name="D:\Alejandra\aNuevo Semestre\Soft 2\LAB\LAB 1\vacation\vacation\src\main\java\programa\VacationPackage.java">
+<violation beginline="12" endline="12" begincolumn="20" endcolumn="30" rule="ImmutableField" ruleset="Design" package="programa" class="VacationPackage" variable="destination" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_design.html#immutablefield" priority="3">
+Private field 'destination' could be made final; it is only initialized in the declaration or constructor.
+</violation>
+</file>
+</pmd>

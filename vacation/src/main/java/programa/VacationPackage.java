@@ -9,7 +9,7 @@ public class VacationPackage {
     /**
      * El destino de la vacación.
      */
-    private String destination;
+    final private String destination;
 
     /**
      * El número de viajeros.
@@ -20,6 +20,10 @@ public class VacationPackage {
      * La duración de la vacación en días.
      */
     private int duration;
+
+    private boolean todoIncluido;
+    private boolean actividadesAventura;
+    private boolean spaBienestar;
 
     /**
      * Constructor para crear un objeto VacationPackage.
@@ -32,6 +36,21 @@ public class VacationPackage {
         this.destination = destination;
         this.numberOfTravelers = numberOfTravelers;
         this.duration = duration;
+        todoIncluido = false;
+        actividadesAventura = false;
+        spaBienestar = false;
+    }
+    
+    public void setTodoIncluido(boolean todoIncluido) {
+        this.todoIncluido = todoIncluido;
+    }
+
+    public void setActividadesAventura(boolean actividadesAventura) {
+        this.actividadesAventura = actividadesAventura;
+    }
+
+    public void setSpaBienestar(boolean spaBienestar) {
+        this.spaBienestar = spaBienestar;
     }
 
     /**
@@ -70,6 +89,7 @@ public class VacationPackage {
 		this.duration = duration;
 	}
 
+	
 	/**
      * Calcula el costo total del paquete de vacaciones.
      *
@@ -88,6 +108,7 @@ public class VacationPackage {
             return -1; // Destino no válido
         }
 
+
         double totalCost = Constantes.COSTO_BASE + additionalCost;
 
         // COnidicon plicar descuentos basados en el número de viajeros
@@ -103,13 +124,28 @@ public class VacationPackage {
         // Aplicar penalizaciones y promociones basadas en la duración
         //y el número de viajeros
         if (duration < Constantes.MIN_DIAS) {
-            totalCost += Constantes.PENALIZACION_DURACION_CORTA; // Penalización
+            totalCost += Constantes.PENAL_DURA_CORTA; // Penalización
         } else if (duration > Constantes.MAX_DIAS || numberOfTravelers == 2) {
-            totalCost -= Constantes.PENALIZACION_DURACION_CORTA; // Promoción
+            totalCost -= Constantes.PENAL_DURA_CORTA; // Promoción
         }
 
+        
+        if (todoIncluido) {
+            totalCost += Constantes.COSTO_TODO_INCLUIDO * numberOfTravelers;
+        }
+
+        if (actividadesAventura) {
+            totalCost += Constantes.COSTO_ACTIVIDADES_AVENTURA * numberOfTravelers;
+        }
+
+        if (spaBienestar) {
+            totalCost += Constantes.COSTO_SPA_Y_BIENESTAR * numberOfTravelers;
+        }
+
+        
+        
         // Validar si el grupo es demasiado grande
-        if (numberOfTravelers > Constantes.DEMASIADOS_VIAJEROS) {
+        if (numberOfTravelers > Constantes.DEM_VIAJEROS) {
             return -1; // Grupo demasiado grande
         }
 
